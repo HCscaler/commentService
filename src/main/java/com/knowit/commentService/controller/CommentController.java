@@ -47,7 +47,12 @@ public class CommentController {
         List<Comment> comments = commentService.getAllCommentsOnTask(projectId, taskId);
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
-
+    @GetMapping("/project/{projectId}")
+    public ResponseEntity<Object> getCommnetOfProject(@PathVariable int projectId)
+    {
+    	List<Comment> commnets = commentService.getAllCommentOfProject(projectId);
+    	return new ResponseEntity<>(commnets,HttpStatus.OK);
+    }
     @GetMapping("/projects/{projectId}/comments")
     public ResponseEntity<Object> getAllCommentsOnProject(@PathVariable int projectId){
         List<Comment> comments = commentService.getAllCommentsOnProject(projectId);
