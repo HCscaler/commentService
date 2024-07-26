@@ -77,9 +77,6 @@ public class CommentService {
         commentRepository.delete(comment);
     }
 
-	public List<Comment> getAllCommentOfProject(int projectId) {
-		
-		return commentRepository.getAllCommentOfProject(projectId);
-	}
+	
     
 }

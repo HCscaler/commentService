@@ -15,8 +15,7 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
     @Query("select comment from Comment comment where comment.projectId = :projectId and comment.taskId is null")
     List<Comment> getAllCommentsOnProject(@Param("projectId") int projectId);
 
-    @Query("select comment from Comment comment where comment.projectId = :projectId")
-	List<Comment> getAllCommentOfProject(@Param("projectId") int projectId);
+   
     
 
 }
