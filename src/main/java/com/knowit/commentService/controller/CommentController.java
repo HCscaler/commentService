@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("comment")
 public class CommentController {
 
     @Autowired
@@ -47,7 +48,7 @@ public class CommentController {
         List<Comment> comments = commentService.getAllCommentsOnTask(projectId, taskId);
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
-    @GetMapping("/project/{projectId}")
+    @GetMapping("/projects/{projectId}")
     public ResponseEntity<Object> getCommnetOfProject(@PathVariable int projectId)
     {
     	List<Comment> commnets = commentService.getAllCommentOfProject(projectId);
